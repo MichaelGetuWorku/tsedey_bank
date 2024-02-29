@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tsedey_bank/screens/dashboard_screen/main_dash.dart';
 import 'package:tsedey_bank/screens/onbording_screen/onboarding_screen.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const OnbordingScreen(),
+      home:  MainDash(),
     );
   }
 }
