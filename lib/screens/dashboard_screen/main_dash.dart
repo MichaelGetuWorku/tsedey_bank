@@ -4,6 +4,8 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:tsedey_bank/screens/auth_screen/login_screen.dart';
 import 'package:tsedey_bank/screens/auth_screen/otp_screen.dart';
 import 'package:tsedey_bank/screens/dashboard_screen/home_screen.dart';
+import 'package:tsedey_bank/screens/dashboard_screen/services_screen.dart';
+import 'package:tsedey_bank/screens/dashboard_screen/transaction_screen.dart';
 import 'package:tsedey_bank/utils/constants.dart';
 
 class MainDash extends StatelessWidget {
@@ -12,13 +14,13 @@ class MainDash extends StatelessWidget {
     PersistentTabController _controller;
 
     _controller = PersistentTabController(initialIndex: 0);
-    List<Widget> _buildScreens() {
+    List<Widget> buildScreens() {
       return [
-        HomeScreen(),
-        OTPScreen(),
-        LoginScreen(),
-        OTPScreen(),
-        LoginScreen(),
+        const HomeScreen(),
+        const ServicesScreen(),
+        const LoginScreen(),
+        const TransactionScreen(),
+        const LoginScreen(),
       ];
     }
 
@@ -27,13 +29,13 @@ class MainDash extends StatelessWidget {
     List<PersistentBottomNavBarItem> _navBarsItems() {
       return [
         PersistentBottomNavBarItem(
-          icon: Icon(CupertinoIcons.home),
+          icon: const Icon(CupertinoIcons.home),
           title: ("Home"),
           activeColorPrimary: kPrimaryColor,
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          icon: Icon(
+          icon: const Icon(
             CupertinoIcons.bag,
           ),
           title: ("Services"),
@@ -41,19 +43,19 @@ class MainDash extends StatelessWidget {
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          icon: Icon(CupertinoIcons.qrcode,color: Colors.black,),
+          icon: const Icon(CupertinoIcons.qrcode,color: Colors.black,),
           title: (" "),
           activeColorPrimary: kPrimaryColor,
 
         ),
         PersistentBottomNavBarItem(
-          icon: Icon(Icons.history,color: Colors.black,),
+          icon: const Icon(Icons.history,color: Colors.black,),
           title: ("History"),
           activeColorPrimary: kPrimaryColor,
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          icon: Icon(CupertinoIcons.profile_circled),
+          icon: const Icon(CupertinoIcons.profile_circled),
           title: ("Profile"),
           activeColorPrimary: kPrimaryColor,
           inactiveColorPrimary: CupertinoColors.systemGrey,
@@ -64,7 +66,7 @@ class MainDash extends StatelessWidget {
     return PersistentTabView(
       context,
       controller: _controller,
-      screens: _buildScreens(),
+      screens: buildScreens(),
       items: _navBarsItems(),
       confineInSafeArea: true,
       backgroundColor: Colors.white,
@@ -83,12 +85,12 @@ class MainDash extends StatelessWidget {
       ),
       popAllScreensOnTapOfSelectedTab: true,
       popActionScreens: PopActionScreensType.all,
-      itemAnimationProperties: ItemAnimationProperties(
+      itemAnimationProperties: const ItemAnimationProperties(
         // Navigation Bar's items animation properties.
         duration: Duration(milliseconds: 200),
         curve: Curves.ease,
       ),
-      screenTransitionAnimation: ScreenTransitionAnimation(
+      screenTransitionAnimation: const ScreenTransitionAnimation(
         // Screen transition animation on change of selected tab.
         animateTabTransition: true,
         curve: Curves.ease,

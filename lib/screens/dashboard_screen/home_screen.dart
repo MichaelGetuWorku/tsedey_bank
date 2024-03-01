@@ -280,7 +280,7 @@ Widget _buildTransactionActivities(BuildContext context) {
             borderRadius: const BorderRadius.all(Radius.circular(20)),
             boxShadow: <BoxShadow>[
               BoxShadow(
-                color: const Color(0xff1546a0).withOpacity(0.1),
+                color:  Colors.black.withOpacity(0.2),
                 blurRadius: 48,
                 offset: const Offset(2, 8),
                 spreadRadius: -16,
